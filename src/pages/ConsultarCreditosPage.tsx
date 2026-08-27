@@ -20,6 +20,11 @@ import {
   IonCol,
   IonRefresher,
   IonRefresherContent,
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonCardSubtitle,
+  IonCardContent,
   useIonRouter
 } from "@ionic/react";
 import { logOutOutline, addOutline } from "ionicons/icons";
@@ -162,51 +167,40 @@ export default function ConsultarCreditosPage() {
             <p style={{ color: "var(--ion-color-medium)" }}>
               Mostrando {creditos.length} de {totalCount} crédito(s)
             </p>
-            <div style={{ overflowX: "auto" }}>
-              <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                <thead>
-                  <tr>
-                    <Th>Cliente</Th>
-                    <Th>Cédula</Th>
-                    <Th>Valor</Th>
-                    <Th>Tasa</Th>
-                    <Th>Plazo</Th>
-                    <Th>Comercial</Th>
-                    <Th>Fecha</Th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {creditos.map((c) => (
-                    <tr key={c.id}>
-                      <Td>{c.nombreCliente}</Td>
-                      <Td>{c.cedula}</Td>
-                      <Td>{formatoMoneda.format(c.valorCredito)}</Td>
-                      <Td>{c.tasaInteres}%</Td>
-                      <Td>{c.plazoMeses} meses</Td>
-                      <Td>{c.nombreComercial}</Td>
-                      <Td>{formatoFecha.format(new Date(c.fechaRegistro))}</Td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="creditos-list">
+              {creditos.map((c) => (
+                <IonCard key={c.id} style={{ marginBottom: "16px", borderRadius: "12px", boxShadow: "0 4px 10px rgba(0,0,0,0.1)", marginInline: "0" }}>
+                  <IonCardHeader>
+                    <IonCardSubtitle>C.C. {c.cedula}</IonCardSubtitle>
+                    <IonCardTitle>{c.nombreCliente}</IonCardTitle>
+                  </IonCardHeader>
+                  <IonCardContent>
+                    <IonGrid className="ion-no-padding">
+                      <IonRow>
+                        <IonCol size="6">
+                          <p><strong>Valor:</strong> {formatoMoneda.format(c.valorCredito)}</p>
+                          <p><strong>Tasa:</strong> {c.tasaInteres}%</p>
+                        </IonCol>
+                        <IonCol size="6">
+                          <p><strong>Plazo:</strong> {c.plazoMeses} meses</p>
+                          <p><strong>Comercial:</strong> {c.nombreComercial}</p>
+                        </IonCol>
+                      </IonRow>
+                      <IonRow style={{ marginTop: "12px" }}>
+                        <IonCol>
+                          <IonText color="medium">
+                            <small>Registrado el {formatoFecha.format(new Date(c.fechaRegistro))}</small>
+                          </IonText>
+                        </IonCol>
+                      </IonRow>
+                    </IonGrid>
+                  </IonCardContent>
+                </IonCard>
+              ))}
             </div>
           </>
         )}
       </IonContent>
     </IonPage>
-  );
-}
-
-function Th({ children }: { children: React.ReactNode }) {
-  return (
-    <th style={{ textAlign: "left", padding: "8px", borderBottom: "2px solid var(--ion-color-light-shade)" }}>
-      {children}
-    </th>
-  );
-}
-
-function Td({ children }: { children: React.ReactNode }) {
-  return (
-    <td style={{ padding: "8px", borderBottom: "1px solid var(--ion-color-light-shade)" }}>{children}</td>
   );
 }
