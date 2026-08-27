@@ -60,8 +60,9 @@ export default function RegisterPage() {
       }
 
       const { token, expiresAtUtc } = await response.json();
-      await login(token, expiresAtUtc);
-      router.push("/creditos/consultar", "forward", "replace");
+      const { Preferences } = await import("@capacitor/preferences");
+      await Preferences.set({ key: "fya_creditos_token", value: token });
+      window.location.href = "/creditos/consultar";
     } catch (err) {
       setError(err instanceof ApiError ? err.message : "No se pudo registrar.");
     } finally {
