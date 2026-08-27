@@ -1,0 +1,35 @@
+## Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+## Build output
+dist/
+www/
+build/
+
+## Ionic / Capacitor
+.idea/
+android/app/build/
+android/.gradle/
+android/local.properties
+android/app/release/
+android/app/debug/
+ios/App/build/
+ios/App/Pods/
+ios/App/App.xcworkspace/
+*.keystore
+*.jks
+
+## Environment / secrets
+.env
+.env.*
+!.env.example
+
+## OS
+.DS_Store
+Thumbs.db
+
+## Logs
+*.log

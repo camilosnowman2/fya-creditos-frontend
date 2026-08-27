@@ -1,0 +1,14 @@
+/*
+ * Paleta base de Ionic. Se puede ajustar a los colores de marca de
+ * Fya Social Capital cambiando estos valores (--ion-color-primary, etc.)
+ * Generado a partir de la paleta por defecto de Ionic; ver
+ * https://ionicframework.com/docs/theming/color-generator
+ */
+:root {
+  --ion-color-primary: #0d5c46;
+  --ion-color-primary-rgb: 13, 92, 70;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #0b5140;
+  --ion-color-primary-tint: #256c5b;
+}

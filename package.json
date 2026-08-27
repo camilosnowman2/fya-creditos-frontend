@@ -1,0 +1,39 @@
+{
+  "name": "fya-creditos-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Registro y consulta de créditos - Fya Social Capital (examen técnico GH-CTP-I+D-ET-01)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "tsc --noEmit",
+    "cap:sync": "cap sync android",
+    "cap:add:android": "cap add android",
+    "cap:open:android": "cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^5.7.4",
+    "@capacitor/app": "^5.0.7",
+    "@capacitor/core": "^5.7.4",
+    "@capacitor/preferences": "^5.0.7",
+    "@ionic/react": "^7.8.6",
+    "@ionic/react-router": "^7.8.6",
+    "ionicons": "^7.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^5.3.4",
+    "react-router-dom": "^5.3.4"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^5.7.4",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@types/react-router": "^5.1.20",
+    "@types/react-router-dom": "^5.3.3",
+    "@vitejs/plugin-react": "^4.2.1",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.0"
+  }
+}

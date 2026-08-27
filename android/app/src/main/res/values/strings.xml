@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Fya Créditos</string>
+    <string name="title_activity_main">Fya Créditos</string>
+    <string name="package_name">com.fyasocialcapital.creditos</string>
+    <string name="custom_url_scheme">com.fyasocialcapital.creditos</string>
+</resources>
