@@ -7,6 +7,13 @@ genera un APK, a diferencia de un React o Angular "puro".
 
 Repositorio hermano: `fya-creditos-backend` (API .NET que consume esta app).
 
+## Despliegue en Vivo
+
+La aplicación se encuentra desplegada y completamente funcional para su evaluación:
+- **URL de acceso:** https://fya-creditos-frontend-production.up.railway.app/login
+
+Para ingresar, el sistema permite el registro abierto. Puede crear un usuario de prueba directamente utilizando la opción "Registrarme" en la pantalla de inicio de sesión.
+
 ## Stack
 
 - **Ionic React 7** + **React Router v5** (vía `@ionic/react-router`)
@@ -71,10 +78,7 @@ la entrega del examen, el `.apk` de debug ya es instalable directamente.
 
 ### Usuario de prueba
 
-El login pega contra `POST /api/auth/login` del backend. Usa el usuario
-que hayas configurado ahí (`AuthCredentials__Username` / `PasswordHash`,
-ver el README del backend) — por defecto `admin` + la contraseña que
-elijas al generar el hash con `tools/generate_password_hash.py`.
+El login autentica contra `POST /api/auth/login` del backend. Para acceder por primera vez, registra un usuario utilizando el botón "Registrarme" en la pantalla de inicio o haciendo un llamado a `POST /api/auth/register` en la API.
 
 ## Variables de entorno
 
